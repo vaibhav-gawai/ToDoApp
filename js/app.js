@@ -17,9 +17,9 @@ const todayName = Utils.getDayName(today).toLowerCase();
 let currentViewDay = Utils.getDayName(today).toLowerCase();
 let currentViewDate = today;
 // Initialize the application
-function init() {
+async function init() {
     // Initialize tasks in localStorage
-    Storage.initializeTasks();
+    await Storage.initializeTasks();
     
     // Load today's tasks
     loadDayTasks(todayName);
@@ -34,8 +34,8 @@ function init() {
 }
 
 // Load tasks for a specific day
-function loadDayTasks(day) {
-    const tasks = Storage.getDayTasks(day);
+async function loadDayTasks(day) {
+    const tasks = await Storage.getDayTasks(day);
     renderTasks(tasks);
     updateProgress(tasks);
 }
@@ -139,29 +139,29 @@ function updateProgress(tasks) {
 
 
 // Handle adding a new task
-function handleAddTask() {
+async function handleAddTask() {
     const text = taskInput.value.trim();
     if (!text) return;
     
-    const newTask = Storage.addTask(todayName, text);
+    const newTask = await Storage.addTask(todayName, text);
     if (newTask) {
-        loadDayTasks(todayName);
+        await loadDayTasks(todayName);
         taskInput.value = '';
         taskInput.focus();
     }
 }
 
 // Handle task toggle (complete/incomplete)
-function handleTaskToggle(taskId) {
-    const toggled = Storage.toggleTask(todayName, taskId);
+async function handleTaskToggle(taskId) {
+    const toggled = await Storage.toggleTask(todayName, taskId);
     if (toggled) {
-        loadDayTasks(todayName);
+        await loadDayTasks(todayName);
     }
 }
 
 // Handle moving a task to another day
-function handleMoveTask(taskId, offset) {
-    const moved = Storage.moveTask(todayName, taskId, offset);
+async function handleMoveTask(taskId, offset) {
+    const moved = await Storage.moveTask(todayName, taskId, offset);
     if (moved) {
         const taskItem = document.querySelector(`.task-item[data-id="${taskId}"]`);
         if (taskItem) {
@@ -174,8 +174,8 @@ function handleMoveTask(taskId, offset) {
 }
 
 // Handle deleting a task
-function handleDeleteTask(taskId) {
-    const deleted = Storage.deleteTask(todayName, taskId);
+async function handleDeleteTask(taskId) {
+    const deleted = await Storage.deleteTask(todayName, taskId);
     if (deleted) {
         const taskItem = document.querySelector(`.task-item[data-id="${taskId}"]`);
         if (taskItem) {
@@ -188,9 +188,9 @@ function handleDeleteTask(taskId) {
 }
 
 // Set up event listeners
-function setupEventListeners() {
+async function setupEventListeners() {
     if (addTaskBtn) {
-        addTaskBtn.addEventListener('click', handleAddTask);
+        addTaskBtn.addEventListener('click', await handleAddTask);
     }
     
     if (taskInput) {
