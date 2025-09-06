@@ -14,14 +14,14 @@ const Utils = (function() {
 
     // Add to Utils object in utils.js
     function getNextDay(currentDay) {
-        const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday','saturday','sunday'];
+        const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
         const currentIndex = days.indexOf(currentDay.toLowerCase());
         if (currentIndex === -1 || currentIndex === days.length - 1) return null;
         return days[currentIndex + 1];
     }
   
   function getPrevDay(currentDay) {
-    const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday','saturday','sunday'];
+    const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
     const currentIndex = days.indexOf(currentDay.toLowerCase());
     if (currentIndex <= 0) return null;
     return days[currentIndex - 1];
@@ -29,7 +29,7 @@ const Utils = (function() {
   
    function getDateForDay(dayName) {
     const weekDates = this.getWeekDates();
-    const dayIndex = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday','saturday','sunday'].indexOf(dayName.toLowerCase());
+    const dayIndex = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'].indexOf(dayName.toLowerCase());
     return weekDates[dayIndex];
   }
     // Get short day name (Mon, Tue, etc.)
@@ -47,7 +47,7 @@ const Utils = (function() {
         monday.setDate(today.getDate() - (currentDay === 0 ? 6 : currentDay - 1));
         
         const weekDates = [];
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < 5; i++) {
             const date = new Date(monday);
             date.setDate(monday.getDate() + i);
             weekDates.push(date);
