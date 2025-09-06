@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week | Luminous Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script type="module" src="js/app.js"></script>
+    
+</head>
+<body>
+    <div class="app-container week-view">
+        <header class="app-header">
+            <button class="nav-btn back-btn" aria-label="Back to today">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h1 class="week-title">This Week</h1>
+            <div class="spacer"></div>
+        </header>
+
+        <main class="week-main">
+            <div class="week-range">June 10 - June 14, 2024</div>
+            
+            <div class="week-grid" id="week-grid">
+                <!-- Days will be injected here by JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+              .then(registration => {
+                console.log('ServiceWorker registration successful');
+              })
+              .catch(err => {
+                console.log('ServiceWorker registration failed: ', err);
+              });
+          });
+        }
+        </script>
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <!-- In both index.html and week.html -->
+
+    <script src="js/router.js"></script>
+</body>
+</html>

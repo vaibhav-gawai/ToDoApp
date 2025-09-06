@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today | Luminous Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script type="module" src="js/app.js"></script>
+    
+    <!-- Add these to both HTML files -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#5e60ce">
+
+<!-- iOS specific -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+<!-- Android/Windows -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="msapplication-TileColor" content="#5e60ce">
+<meta name="msapplication-TileImage" content="/icons/icon-144.png">
+</head>
+<body>
+    <div class="app-container day-view">
+        <header class="app-header">
+            <button class="nav-btn week-view-btn" aria-label="View week">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 3V5M16 3V5M3 9H21M5 7H19C20.1046 7 21 7.89543 21 9V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V9C3 7.89543 3.89543 7 5 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h1 class="day-title">Today</h1>
+            <button class="nav-btn settings-btn" aria-label="Settings">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19.4 15C19.2669 15.3016 19.227 15.6362 19.2851 15.9606C19.3432 16.2849 19.4968 16.5835 19.725 16.8175C19.9532 17.0515 20.245 17.2101 20.5615 17.2717C20.878 17.3334 21.2035 17.2954 21.495 17.163L21.6 17.1C21.8 17 22 16.9 22 16.5C22 16 21.5 15.5 21 15.2C20.9 15.1 20.7 15 20.5 15H19.4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10.1 9C10.2331 8.69842 10.273 8.36375 10.2149 8.0394C10.1568 7.71506 10.0032 7.41649 9.775 7.18251C9.54678 6.94853 9.25503 6.78986 8.93853 6.72823C8.62203 6.66659 8.29648 6.70465 8.005 6.837L7.9 6.9C7.7 7 7.5 7.1 7.5 7.5C7.5 8 8 8.5 8.5 8.8C8.6 8.9 8.8 9 9 9H10.1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5.6 15H4.5C4.3 15 4.1 15.1 4 15.2C3.5 15.5 3 16 3 16.5C3 16.9 3.2 17 3.4 17.1L3.5 17.2C3.8 17.3 4.1 17.4 4.5 17.3C4.8 17.2 5.1 17.1 5.4 16.8C5.6 16.6 5.8 16.3 5.8 16C5.7 15.6 5.7 15.3 5.6 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.5 9H17.6C17.7 8.7 17.8 8.4 17.8 8.1C17.8 7.8 17.6 7.5 17.4 7.3C17.2 7.1 16.9 6.9 16.5 6.9C16.1 6.9 15.8 7 15.5 7.2L15.4 7.3C15.1 7.5 14.9 7.7 14.7 8C14.5 8.3 14.5 8.6 14.5 9H15.6H16.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </header>
+
+        <main class="day-main">
+            <div class="date-display">
+                <div class="current-date">Monday, June 10</div>
+                <div class="nav-days">
+                    <button class="nav-day-btn prev-day" aria-label="Previous day">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="nav-day-btn next-day" aria-label="Next day">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="task-progress">
+                <div class="progress-text">2 of 5 tasks completed</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 40%"></div>
+                </div>
+            </div>
+
+            <div class="task-input-container">
+                <input type="text" class="task-input" placeholder="What needs to be done today?" id="task-input">
+                <button class="add-task-btn" id="add-task-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+
+            <ul class="task-list" id="task-list">
+                <!-- Tasks will be injected here by JavaScript -->
+            </ul>
+        </main>
+
+        <div class="empty-state" id="empty-state">
+            <div class="empty-icon">📅</div>
+            <h3>No tasks for today</h3>
+            <p>Add a task to get started</p>
+        </div>
+    </div>
+
+    <div class="settings-modal" id="settings-modal">
+        <div class="settings-content">
+          <div class="settings-header">
+            <h2>Settings</h2>
+            <button class="close-settings">&times;</button>
+          </div>
+          <div class="settings-body">
+            <div class="setting-group">
+              <h3>Appearance</h3>
+              <div class="setting-option">
+                <label>
+                  <input type="checkbox" id="dark-mode-toggle">
+                  Dark Mode
+                </label>
+              </div>
+              <div class="setting-option">
+                <label>Theme Color</label>
+                <div class="color-options">
+                  <button class="color-option" data-color="#3d5a80" style="background-color: #3d5a80;"></button>
+                  <button class="color-option" data-color="#da627d" style="background-color: #da627d;"></button>
+                  <button class="color-option" data-color="#3a0ca3" style="background-color: #3a0ca3;"></button>
+                  <button class="color-option" data-color="#7209b7" style="background-color: #7209b7;"></button>
+                </div>
+              </div>
+              <div class="setting-option">
+                  <label>Secondary Color</label>
+                  <div class="secondary-color-options">
+                      <button class="secondary-color-option" data-color="#48bfe3" style="background-color: #48bfe3;"></button>
+                      <button class="secondary-color-option" data-color="#4cc9f0" style="background-color: #4cc9f0;"></button>
+                      <button class="secondary-color-option" data-color="#56cfe1" style="background-color: #56cfe1;"></button>
+                      <button class="secondary-color-option" data-color="#72efdd" style="background-color: #72efdd;"></button>
+                      <button class="secondary-color-option" data-color="#80ffdb" style="background-color: #80ffdb;"></button>
+                      <button class="secondary-color-option" data-color="#f72585" style="background-color: #f72585;"></button>
+                  </div>
+                </div>
+            </div>
+            <div class="setting-group">
+              <h3>Notifications</h3>
+              <div class="setting-option">
+                <label>
+                  <input type="checkbox" id="notifications-toggle">
+                  Enable Reminders
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+              .then(registration => {
+                console.log('ServiceWorker registration successful');
+              })
+              .catch(err => {
+                console.log('ServiceWorker registration failed: ', err);
+              });
+          });
+        }
+        </script>
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <!-- In both index.html and week.html -->
+
+    <script src="js/router.js"></script>
+</body>
+</html>

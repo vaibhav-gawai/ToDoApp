@@ -1,0 +1,1651 @@
+//index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today | Luminous Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script type="module" src="js/app.js"></script>
+    
+    <!-- Add these to both HTML files -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#5e60ce">
+
+<!-- iOS specific -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+<!-- Android/Windows -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="msapplication-TileColor" content="#5e60ce">
+<meta name="msapplication-TileImage" content="/icons/icon-144.png">
+</head>
+<body class="dark-mode">
+    <div class="app-container day-view">
+        <header class="app-header">
+            <button class="nav-btn week-view-btn" aria-label="View week">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 3V5M16 3V5M3 9H21M5 7H19C20.1046 7 21 7.89543 21 9V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V9C3 7.89543 3.89543 7 5 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h1 class="day-title">Today</h1>
+            <button class="nav-btn settings-btn" aria-label="Settings">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19.4 15C19.2669 15.3016 19.227 15.6362 19.2851 15.9606C19.3432 16.2849 19.4968 16.5835 19.725 16.8175C19.9532 17.0515 20.245 17.2101 20.5615 17.2717C20.878 17.3334 21.2035 17.2954 21.495 17.163L21.6 17.1C21.8 17 22 16.9 22 16.5C22 16 21.5 15.5 21 15.2C20.9 15.1 20.7 15 20.5 15H19.4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10.1 9C10.2331 8.69842 10.273 8.36375 10.2149 8.0394C10.1568 7.71506 10.0032 7.41649 9.775 7.18251C9.54678 6.94853 9.25503 6.78986 8.93853 6.72823C8.62203 6.66659 8.29648 6.70465 8.005 6.837L7.9 6.9C7.7 7 7.5 7.1 7.5 7.5C7.5 8 8 8.5 8.5 8.8C8.6 8.9 8.8 9 9 9H10.1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5.6 15H4.5C4.3 15 4.1 15.1 4 15.2C3.5 15.5 3 16 3 16.5C3 16.9 3.2 17 3.4 17.1L3.5 17.2C3.8 17.3 4.1 17.4 4.5 17.3C4.8 17.2 5.1 17.1 5.4 16.8C5.6 16.6 5.8 16.3 5.8 16C5.7 15.6 5.7 15.3 5.6 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.5 9H17.6C17.7 8.7 17.8 8.4 17.8 8.1C17.8 7.8 17.6 7.5 17.4 7.3C17.2 7.1 16.9 6.9 16.5 6.9C16.1 6.9 15.8 7 15.5 7.2L15.4 7.3C15.1 7.5 14.9 7.7 14.7 8C14.5 8.3 14.5 8.6 14.5 9H15.6H16.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </header>
+
+        <main class="day-main">
+          Good Morning
+            <div class="date-display">
+                <div class="current-date">Monday, June 10</div>
+                <div class="nav-days">
+                    <button class="nav-day-btn prev-day" aria-label="Previous day">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="nav-day-btn next-day" aria-label="Next day">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="task-progress">
+                <div class="progress-text">2 of 5 tasks completed</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 40%"></div>
+                </div>
+            </div>
+
+            <div class="task-input-container">
+                <input type="text" class="task-input" placeholder="What needs to be done today?" id="task-input">
+                <button class="add-task-btn" id="add-task-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+
+            <ul class="task-list" id="task-list">
+                <!-- Tasks will be injected here by JavaScript -->
+            </ul>
+        </main>
+
+        <div class="empty-state" id="empty-state">
+            <div class="empty-icon">📅</div>
+            <h3>No tasks for today</h3>
+            <p>Add a task to get started</p>
+        </div>
+    </div>
+
+    <div class="settings-modal" id="settings-modal">
+        <div class="settings-content">
+          <div class="settings-header">
+            <h2>Settings</h2>
+            <button class="close-settings">&times;</button>
+          </div>
+          <div class="settings-body">
+            <div class="setting-group">
+              <h3>Appearance</h3>
+              <div class="setting-option">
+                <label>
+                  <input type="checkbox" id="dark-mode-toggle">
+                  Dark Mode
+                </label>
+              </div>
+              <div class="setting-option">
+                <label>Theme Color</label>
+                <div class="color-options">
+                  <button class="color-option" data-color="#5e60ce" style="background-color: #5e60ce;"></button>
+                  <button class="color-option" data-color="#4361ee" style="background-color: #4361ee;"></button>
+                  <button class="color-option" data-color="#3a0ca3" style="background-color: #3a0ca3;"></button>
+                  <button class="color-option" data-color="#7209b7" style="background-color: #7209b7;"></button>
+                </div>
+              </div>
+            </div>
+            <div class="setting-group">
+              <h3>Notifications</h3>
+              <div class="setting-option">
+                <label>
+                  <input type="checkbox" id="notifications-toggle">
+                  Enable Reminders
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+              .then(registration => {
+                console.log('ServiceWorker registration successful');
+              })
+              .catch(err => {
+                console.log('ServiceWorker registration failed: ', err);
+              });
+          });
+        }
+        </script>
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <!-- In both index.html and week.html -->
+
+    <script src="js/router.js"></script>
+</body>
+</html>
+
+//manifest.json
+{
+    "name": "Luminous Workweek",
+    "short_name": "Workweek",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f5f7ff",
+    "theme_color": "#5e60ce",
+    "description": "A beautiful workweek planner",
+    "icons": [
+      {
+        "src": "icons/icon-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "icons/icon-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "icons/icon-maskable.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "maskable"
+      }
+    ]
+  }
+
+//project_code_archive.txt
+//index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today | Luminous Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script type="module" src="js/app.js"></script>
+    
+    <!-- Add these to both HTML files -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#5e60ce">
+
+<!-- iOS specific -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+<!-- Android/Windows -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="msapplication-TileColor" content="#5e60ce">
+<meta name="msapplication-TileImage" content="/icons/icon-144.png">
+</head>
+<body class="dark-mode">
+    <div class="app-container day-view">
+        <header class="app-header">
+            <button class="nav-btn week-view-btn" aria-label="View week">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 3V5M16 3V5M3 9H21M5 7H19C20.1046 7 21 7.89543 21 9V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V9C3 7.89543 3.89543 7 5 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h1 class="day-title">Today</h1>
+            <button class="nav-btn settings-btn" aria-label="Settings">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19.4 15C19.2669 15.3016 19.227 15.6362 19.2851 15.9606C19.3432 16.2849 19.4968 16.5835 19.725 16.8175C19.9532 17.0515 20.245 17.2101 20.5615 17.2717C20.878 17.3334 21.2035 17.2954 21.495 17.163L21.6 17.1C21.8 17 22 16.9 22 16.5C22 16 21.5 15.5 21 15.2C20.9 15.1 20.7 15 20.5 15H19.4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10.1 9C10.2331 8.69842 10.273 8.36375 10.2149 8.0394C10.1568 7.71506 10.0032 7.41649 9.775 7.18251C9.54678 6.94853 9.25503 6.78986 8.93853 6.72823C8.62203 6.66659 8.29648 6.70465 8.005 6.837L7.9 6.9C7.7 7 7.5 7.1 7.5 7.5C7.5 8 8 8.5 8.5 8.8C8.6 8.9 8.8 9 9 9H10.1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5.6 15H4.5C4.3 15 4.1 15.1 4 15.2C3.5 15.5 3 16 3 16.5C3 16.9 3.2 17 3.4 17.1L3.5 17.2C3.8 17.3 4.1 17.4 4.5 17.3C4.8 17.2 5.1 17.1 5.4 16.8C5.6 16.6 5.8 16.3 5.8 16C5.7 15.6 5.7 15.3 5.6 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.5 9H17.6C17.7 8.7 17.8 8.4 17.8 8.1C17.8 7.8 17.6 7.5 17.4 7.3C17.2 7.1 16.9 6.9 16.5 6.9C16.1 6.9 15.8 7 15.5 7.2L15.4 7.3C15.1 7.5 14.9 7.7 14.7 8C14.5 8.3 14.5 8.6 14.5 9H15.6H16.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </header>
+
+        <main class="day-main">
+          Good Morning
+            <div class="date-display">
+                <div class="current-date">Monday, June 10</div>
+                <div class="nav-days">
+                    <button class="nav-day-btn prev-day" aria-label="Previous day">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="nav-day-btn next-day" aria-label="Next day">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="task-progress">
+                <div class="progress-text">2 of 5 tasks completed</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 40%"></div>
+                </div>
+            </div>
+
+            <div class="task-input-container">
+                <input type="text" class="task-input" placeholder="What needs to be done today?" id="task-input">
+                <button class="add-task-btn" id="add-task-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+
+            <ul class="task-list" id="task-list">
+                <!-- Tasks will be injected here by JavaScript -->
+            </ul>
+        </main>
+
+        <div class="empty-state" id="empty-state">
+            <div class="empty-icon">📅</div>
+            <h3>No tasks for today</h3>
+            <p>Add a task to get started</p>
+        </div>
+    </div>
+
+    <div class="settings-modal" id="settings-modal">
+        <div class="settings-content">
+          <div class="settings-header">
+            <h2>Settings</h2>
+            <button class="close-settings">&times;</button>
+          </div>
+          <div class="settings-body">
+            <div class="setting-group">
+              <h3>Appearance</h3>
+              <div class="setting-option">
+                <label>
+                  <input type="checkbox" id="dark-mode-toggle">
+                  Dark Mode
+                </label>
+              </div>
+              <div class="setting-option">
+                <label>Theme Color</label>
+                <div class="color-options">
+                  <button class="color-option" data-color="#5e60ce" style="background-color: #5e60ce;"></button>
+                  <button class="color-option" data-color="#4361ee" style="background-color: #4361ee;"></button>
+                  <button class="color-option" data-color="#3a0ca3" style="background-color: #3a0ca3;"></button>
+                  <button class="color-option" data-color="#7209b7" style="background-color: #7209b7;"></button>
+                </div>
+              </div>
+            </div>
+            <div class="setting-group">
+              <h3>Notifications</h3>
+              <div class="setting-option">
+                <label>
+                  <input type="checkbox" id="notifications-toggle">
+                  Enable Reminders
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+              .then(registration => {
+                console.log('ServiceWorker registration successful');
+              })
+              .catch(err => {
+                console.log('ServiceWorker registration failed: ', err);
+              });
+          });
+        }
+        </script>
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <!-- In both index.html and week.html -->
+
+    <script src="js/router.js"></script>
+</body>
+</html>
+
+//week.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week | Luminous Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script type="module" src="js/app.js"></script>
+    
+</head>
+<body>
+    <div class="app-container week-view">
+        <header class="app-header">
+            <button class="nav-btn back-btn" aria-label="Back to today">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h1 class="week-title">This Week</h1>
+            <div class="spacer"></div>
+        </header>
+
+        <main class="week-main">
+            <div class="week-range">June 10 - June 14, 2024</div>
+            
+            <div class="week-grid" id="week-grid">
+                <!-- Days will be injected here by JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+              .then(registration => {
+                console.log('ServiceWorker registration successful');
+              })
+              .catch(err => {
+                console.log('ServiceWorker registration failed: ', err);
+              });
+          });
+        }
+        </script>
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <!-- In both index.html and week.html -->
+
+    <script src="js/router.js"></script>
+</body>
+</html>
+
+//css\animations.css
+/* Fade animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.95); }
+}
+
+/* Slide animations */
+@keyframes slideInRight {
+    from { transform: translateX(20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(20px); opacity: 0; }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Task animations */
+.task-item {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.task-item.exiting {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+.task-item.moving {
+    animation: slideOutRight 0.3s ease forwards;
+}
+
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Page transitions */
+.page-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.page-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+}
+
+
+
+//css\styles.css
+
+
+:root {
+    --primary: #5e60ce;
+    --primary-light: #8a8df2;
+    --primary-dark: #3a0ca3;
+    --secondary: #48bfe3;
+    --accent: #64dfdf;
+    --success: #80ffdb;
+    --warning: #ff9e00;
+    --error: #ef233c;
+    
+    --text-primary: #2b2d42;
+    --text-secondary: #4a4e69;
+    --text-muted: #8e9aaf;
+    
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #e9ecef;
+    --bg-surface: #ffffff;
+    
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+    max-width: 100%;
+    min-height: 100vh;
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) 0;
+    margin-bottom: var(--space-md);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: var(--bg-secondary);
+    color: var(--primary);
+}
+
+.day-title, .week-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--primary);
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.date-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+}
+
+.current-date {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.nav-days {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.nav-day-btn {
+    background: var(--bg-surface);
+    border: 1px solid var(--bg-secondary);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.nav-day-btn:hover {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.task-progress {
+    margin-bottom: var(--space-lg);
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-xs);
+}
+
+.progress-bar {
+    height: 6px;
+    background: var(--bg-secondary);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.task-input-container {
+    position: relative;
+    margin-bottom: var(--space-lg);
+}
+
+.task-input {
+    width: 100%;
+    padding: var(--space-md);
+    padding-right: 50px;
+    border: 1px solid var(--bg-secondary);
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+    background: var(--bg-surface);
+}
+
+.task-input:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(94, 96, 206, 0.2);
+}
+
+.add-task-btn {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-task-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: var(--space-md);
+    background: var(--bg-surface);
+    border-radius: var(--border-radius-sm);
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.task-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--bg-secondary);
+    border-radius: 6px;
+    margin-right: var(--space-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.task-checkbox:checked {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.task-checkbox:checked::after {
+    content: '✓';
+    color: white;
+    font-size: 0.8rem;
+}
+
+.task-text {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    word-break: break-word;
+}
+
+.task-item.completed .task-text {
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+.task-actions {
+    display: flex;
+    gap: var(--space-xs);
+    margin-left: var(--space-sm);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.task-item:hover .task-actions {
+    opacity: 1;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background: rgba(94, 96, 206, 0.1);
+    color: var(--primary);
+}
+
+.empty-state {
+    text-align: center;
+    padding: var(--space-xl) 0;
+    color: var(--text-muted);
+    display: none;
+}
+
+.empty-state.visible {
+    display: block;
+}
+
+.empty-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+    opacity: 0.5;
+}
+
+/* Week View Styles */
+.week-view .week-main {
+    flex-grow: 1;
+}
+
+.week-range {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-lg);
+}
+
+.week-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+.day-card {
+    background: var(--bg-surface);
+    border-radius: var(--border-radius);
+    padding: var(--space-md);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+}
+
+.day-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.day-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--bg-secondary);
+}
+
+.day-card-title {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.day-card-count {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: var(--bg-secondary);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 50px;
+}
+
+.day-card-tasks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.day-card-task {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: var(--space-xs) 0;
+}
+
+.day-card-task.completed {
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+.day-card-task-checkbox {
+    margin-right: var(--space-sm);
+    color: var(--primary);
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+    .app-container {
+        max-width: 640px;
+        margin: 0 auto;
+    }
+    
+    .week-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .app-container {
+        max-width: 768px;
+        padding: var(--space-lg);
+    }
+    
+    .week-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .app-container {
+        max-width: 1024px;
+    }
+    
+    .week-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+/* Settings Modal */
+.settings-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .settings-modal.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .settings-content {
+    background-color: white;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+  
+  .settings-modal.active .settings-content {
+    transform: translateY(0);
+  }
+  
+  .settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--gray-200);
+  }
+  
+  .close-settings {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+  }
+  
+  .settings-body {
+    padding: var(--space-md);
+  }
+  
+  .setting-group {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .setting-group h3 {
+    margin-bottom: var(--space-md);
+    color: var(--primary);
+  }
+  
+  .setting-option {
+    margin-bottom: var(--space-md);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .setting-option label {
+    margin-bottom: var(--space-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+  
+  .color-options {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+  }
+  
+  .color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .color-option:hover {
+    transform: scale(1.1);
+  }
+  
+  .color-option.active {
+    border-color: var(--text-primary);
+    transform: scale(1.1);
+  }
+  
+  /* Dark Mode */
+  .dark-mode {
+    --text-primary: #f8f9fa;
+    --text-secondary: #e9ecef;
+    --text-muted: #adb5bd;
+    --bg-primary: #212529;
+    --bg-secondary: #343a40;
+    --bg-surface: #495057;
+    --gray-100: #212529;
+    --gray-200: #343a40;
+    --gray-300: #495057;
+    --gray-400: #6c757d;
+    --gray-500: #adb5bd;
+    --gray-600: #ced4da;
+  }
+
+//js\app.js
+// app.js - Main application logic
+
+// DOM Elements
+const taskInput = document.getElementById('task-input');
+const addTaskBtn = document.getElementById('add-task-btn');
+const taskList = document.getElementById('task-list');
+const emptyState = document.getElementById('empty-state');
+const currentDateEl = document.querySelector('.current-date');
+const progressText = document.querySelector('.progress-text');
+const progressFill = document.querySelector('.progress-fill');
+
+// Today's date and day
+const today = new Date();
+const todayName = Utils.getDayName(today).toLowerCase();
+
+// Add these variables at the top
+let currentViewDay = Utils.getDayName(today).toLowerCase();
+let currentViewDate = today;
+// Initialize the application
+function init() {
+    // Initialize tasks in localStorage
+    Storage.initializeTasks();
+    
+    // Load today's tasks
+    loadDayTasks(todayName);
+    
+    // Set up event listeners
+    setupEventListeners();
+    
+    // Update current date display
+    updateCurrentDate();
+
+    setupSettings();
+}
+
+// Load tasks for a specific day
+function loadDayTasks(day) {
+    const tasks = Storage.getDayTasks(day);
+    renderTasks(tasks);
+    updateProgress(tasks);
+}
+
+
+
+// Add this function to update the day view
+function updateDayView(dayName) {
+  currentViewDay = dayName;
+  currentViewDate = Utils.getDateForDay(dayName);
+  loadDayTasks(dayName);
+  updateCurrentDate();
+}
+
+// Modify updateCurrentDate function
+function updateCurrentDate() {
+  if (currentDateEl) {
+    const dayTitle = currentViewDay === todayName.toLowerCase() ? 'Today' : Utils.formatDate(currentViewDate);
+    currentDateEl.textContent = dayTitle;
+  }
+}
+
+// Add these handlers
+function handleNextDay() {
+  const nextDay = Utils.getNextDay(currentViewDay);
+  if (nextDay) {
+    updateDayView(nextDay);
+  }
+}
+
+function handlePrevDay() {
+  const prevDay = Utils.getPrevDay(currentViewDay);
+  if (prevDay) {
+    updateDayView(prevDay);
+  }
+}
+
+
+// Render tasks to the DOM
+function renderTasks(tasks) {
+    if (!taskList) return;
+    
+    taskList.innerHTML = '';
+    
+    if (tasks.length === 0) {
+        if (emptyState) emptyState.classList.add('visible');
+        return;
+    }
+    
+    if (emptyState) emptyState.classList.remove('visible');
+    
+    // Sort tasks: incomplete first, completed last
+    const sortedTasks = [...tasks].sort((a, b) => {
+        if (a.completed && !b.completed) return 1;
+        if (!a.completed && b.completed) return -1;
+        return 0;
+    });
+    
+    sortedTasks.forEach((task, index) => {
+        const taskItem = document.createElement('li');
+        taskItem.className = `task-item ${task.completed ? 'completed' : ''}`;
+        taskItem.dataset.id = task.id;
+        taskItem.style.animationDelay = `${index * 0.05}s`;
+        
+        taskItem.innerHTML = `
+            <input type="checkbox" class="task-checkbox" ${task.completed ? 'checked' : ''}>
+            <span class="task-text">${task.text}</span>
+            <div class="task-actions">
+                <button class="action-btn tomorrow-btn" title="Move to tomorrow">→</button>
+                <button class="action-btn day-after-btn" title="Move to day after">→→</button>
+                <button class="action-btn delete-btn" title="Delete">×</button>
+            </div>
+        `;
+        
+        taskList.appendChild(taskItem);
+        
+        // Add event listeners to the new task
+        const checkbox = taskItem.querySelector('.task-checkbox');
+        const tomorrowBtn = taskItem.querySelector('.tomorrow-btn');
+        const dayAfterBtn = taskItem.querySelector('.day-after-btn');
+        const deleteBtn = taskItem.querySelector('.delete-btn');
+        
+        checkbox.addEventListener('change', () => handleTaskToggle(task.id));
+        tomorrowBtn.addEventListener('click', () => handleMoveTask(task.id, 1));
+        dayAfterBtn.addEventListener('click', () => handleMoveTask(task.id, 2));
+        deleteBtn.addEventListener('click', () => handleDeleteTask(task.id));
+    });
+}
+
+// Update progress display
+function updateProgress(tasks) {
+    if (!progressText || !progressFill) return;
+    
+    const totalTasks = tasks.length;
+    const completedTasks = tasks.filter(task => task.completed).length;
+    const progress = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+    
+    progressText.textContent = `${completedTasks} of ${totalTasks} tasks completed`;
+    progressFill.style.width = `${progress}%`;
+}
+
+
+// Handle adding a new task
+function handleAddTask() {
+    const text = taskInput.value.trim();
+    if (!text) return;
+    
+    const newTask = Storage.addTask(todayName, text);
+    if (newTask) {
+        loadDayTasks(todayName);
+        taskInput.value = '';
+        taskInput.focus();
+    }
+}
+
+// Handle task toggle (complete/incomplete)
+function handleTaskToggle(taskId) {
+    const toggled = Storage.toggleTask(todayName, taskId);
+    if (toggled) {
+        loadDayTasks(todayName);
+    }
+}
+
+// Handle moving a task to another day
+function handleMoveTask(taskId, offset) {
+    const moved = Storage.moveTask(todayName, taskId, offset);
+    if (moved) {
+        const taskItem = document.querySelector(`.task-item[data-id="${taskId}"]`);
+        if (taskItem) {
+            taskItem.classList.add('exiting');
+            setTimeout(() => {
+                loadDayTasks(todayName);
+            }, 300);
+        }
+    }
+}
+
+// Handle deleting a task
+function handleDeleteTask(taskId) {
+    const deleted = Storage.deleteTask(todayName, taskId);
+    if (deleted) {
+        const taskItem = document.querySelector(`.task-item[data-id="${taskId}"]`);
+        if (taskItem) {
+            taskItem.classList.add('exiting');
+            setTimeout(() => {
+                loadDayTasks(todayName);
+            }, 300);
+        }
+    }
+}
+
+// Set up event listeners
+function setupEventListeners() {
+    if (addTaskBtn) {
+        addTaskBtn.addEventListener('click', handleAddTask);
+    }
+    
+    if (taskInput) {
+        taskInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleAddTask();
+            }
+        });
+    }
+    
+    // Debounce resize events for performance
+    window.addEventListener('resize', Utils.debounce(() => {
+        // Handle any responsive behavior
+    }, 100));
+    const nextDayBtn = document.querySelector('.next-day');
+    const prevDayBtn = document.querySelector('.prev-day');
+
+    if (nextDayBtn) nextDayBtn.addEventListener('click', handleNextDay);
+  if (prevDayBtn) prevDayBtn.addEventListener('click', handlePrevDay);
+}
+
+// Initialize the app when DOM is loaded
+document.addEventListener('DOMContentLoaded', init);
+
+// Week view rendering function
+function renderWeekView() {
+    const weekGrid = document.getElementById('week-grid');
+    if (!weekGrid) return;
+    
+    weekGrid.innerHTML = '';
+    
+    const weekDates = Utils.getWeekDates();
+    const weekTasks = Storage.getWeekTasks();
+    
+    weekDates.forEach((date, index) => {
+        const dayName = Utils.getDayName(date).toLowerCase();
+        const shortDayName = Utils.getShortDayName(date);
+        const tasks = weekTasks[dayName] || [];
+        
+        const completedTasks = tasks.filter(task => task.completed).length;
+        const totalTasks = tasks.length;
+        const progress = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+        
+        const dayCard = document.createElement('div');
+        dayCard.className = 'day-card';
+        dayCard.dataset.day = dayName;
+        
+        dayCard.innerHTML = `
+            <div class="day-card-header">
+                <div class="day-card-title">${shortDayName}</div>
+                <div class="day-card-count">${totalTasks} ${totalTasks === 1 ? 'task' : 'tasks'}</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: ${progress}%"></div>
+            </div>
+            <ul class="day-card-tasks">
+                ${tasks.slice(0, 3).map(task => `
+                    <li class="day-card-task ${task.completed ? 'completed' : ''}">
+                        <span class="day-card-task-checkbox">${task.completed ? '✓' : '○'}</span>
+                        ${task.text}
+                    </li>
+                `).join('')}
+                ${totalTasks > 3 ? `<li class="day-card-task">+${totalTasks - 3} more</li>` : ''}
+                ${totalTasks === 0 ? `<li class="day-card-task">No tasks</li>` : ''}
+            </ul>
+        `;
+        
+        weekGrid.appendChild(dayCard);
+    });
+}
+
+// Expose renderWeekView for week.html
+if (typeof window !== 'undefined') {
+    window.renderWeekView = renderWeekView;
+}
+
+// Add these functions
+function setupSettings() {
+    const settingsBtn = document.querySelector('.settings-btn');
+    const settingsModal = document.getElementById('settings-modal');
+    const closeSettings = document.querySelector('.close-settings');
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const colorOptions = document.querySelectorAll('.color-option');
+    
+    // Load saved settings
+    loadSettings();
+    
+    // Toggle modal
+    if (settingsBtn && settingsModal) {
+      settingsBtn.addEventListener('click', () => {
+        settingsModal.classList.add('active');
+      });
+    }
+    
+    if (closeSettings && settingsModal) {
+      closeSettings.addEventListener('click', () => {
+        settingsModal.classList.remove('active');
+      });
+    }
+    
+    // Dark mode toggle
+    if (darkModeToggle) {
+      darkModeToggle.addEventListener('change', (e) => {
+        document.body.classList.toggle('dark-mode', e.target.checked);
+        localStorage.setItem('darkMode', e.target.checked);
+      });
+    }
+    
+    // Color theme selection
+    colorOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        const color = option.dataset.color;
+        document.documentElement.style.setProperty('--primary', color);
+        localStorage.setItem('themeColor', color);
+        
+        // Update active state
+        colorOptions.forEach(opt => opt.classList.remove('active'));
+        option.classList.add('active');
+      });
+    });
+}
+  
+function loadSettings() {
+    // Dark mode
+    const darkMode = localStorage.getItem('darkMode') === 'true';
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+      const toggle = document.getElementById('dark-mode-toggle');
+      if (toggle) toggle.checked = true;
+    }
+    
+    // Theme color
+    const savedColor = localStorage.getItem('themeColor') || '#5e60ce';
+    document.documentElement.style.setProperty('--primary', savedColor);
+    
+    // Set active color option
+    const colorOptions = document.querySelectorAll('.color-option');
+    colorOptions.forEach(option => {
+      if (option.dataset.color === savedColor) {
+        option.classList.add('active');
+      }
+    });
+}
+
+
+
+//js\router.js
+// router.js - Simple client-side routing
+
+const Router = (function() {
+    // Handle navigation between views
+    function setupRouter() {
+        // Handle navigation to week view
+        const weekViewBtn = document.querySelector('.week-view-btn');
+        if (weekViewBtn) {
+            weekViewBtn.addEventListener('click', () => {
+                window.location.href = 'week.html';
+            });
+        }
+        
+        // Handle back button
+        const backBtn = document.querySelector('.back-btn');
+        if (backBtn) {
+            backBtn.addEventListener('click', () => {
+                window.location.href = 'index.html';
+            });
+        }
+        
+        // Handle day navigation
+        const prevDayBtn = document.querySelector('.prev-day');
+        const nextDayBtn = document.querySelector('.next-day');
+        
+        if (prevDayBtn && nextDayBtn) {
+            prevDayBtn.addEventListener('click', () => {
+            });
+            
+            nextDayBtn.addEventListener('click', () => {
+                
+            });
+        }
+    }
+
+    return {
+        setupRouter
+    };
+})();
+
+// Initialize router when DOM is loaded
+document.addEventListener('DOMContentLoaded', Router.setupRouter);
+
+//js\storage.js
+// storage.js - Using Utils from utils.js
+
+const Storage = (function() {
+    const STORAGE_KEY = 'luminous-planner-tasks';
+
+    // Initialize tasks for the current week
+    function initializeTasks() {
+        const weekDates = Utils.getWeekDates();
+        const dayNames = weekDates.map(date => Utils.getDayName(date).toLowerCase());
+        
+        let tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+        
+        // Ensure all days have an array
+        dayNames.forEach(day => {
+            if (!tasks[day]) {
+                tasks[day] = [];
+            }
+        });
+        
+        // Clean up old days not in current week
+        Object.keys(tasks).forEach(day => {
+            if (!dayNames.includes(day)) {
+                delete tasks[day];
+            }
+        });
+        
+        saveTasks(tasks);
+        return tasks;
+    }
+
+    // Save tasks to localStorage
+    function saveTasks(tasks) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+    }
+
+    // Get tasks for a specific day
+    function getDayTasks(day) {
+        const tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+        return tasks[day] || [];
+    }
+
+    // Get all tasks for the week
+    function getWeekTasks() {
+        const tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+        const weekDates = Utils.getWeekDates();
+        const dayNames = weekDates.map(date => Utils.getDayName(date).toLowerCase());
+        
+        const weekTasks = {};
+        dayNames.forEach(day => {
+            weekTasks[day] = tasks[day] || [];
+        });
+        
+        return weekTasks;
+    }
+
+    // Add a new task
+    function addTask(day, text) {
+        if (!text.trim()) return;
+        
+        const tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+        if (!tasks[day]) tasks[day] = [];
+        
+        const newTask = {
+            id: Utils.generateId(),
+            text: text.trim(),
+            completed: false,
+            createdAt: new Date().toISOString()
+        };
+        
+        tasks[day].push(newTask);
+        saveTasks(tasks);
+        return newTask;
+    }
+
+    // Toggle task completion status
+    function toggleTask(day, taskId) {
+        const tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+        if (!tasks[day]) return false;
+        
+        const taskIndex = tasks[day].findIndex(task => task.id === taskId);
+        if (taskIndex === -1) return false;
+        
+        tasks[day][taskIndex].completed = !tasks[day][taskIndex].completed;
+        saveTasks(tasks);
+        return true;
+    }
+
+    // Delete a task
+    function deleteTask(day, taskId) {
+        const tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+        if (!tasks[day]) return false;
+        
+        const initialLength = tasks[day].length;
+        tasks[day] = tasks[day].filter(task => task.id !== taskId);
+        
+        if (tasks[day].length !== initialLength) {
+            saveTasks(tasks);
+            return true;
+        }
+        
+        return false;
+    }
+
+    // Move task to another day
+    function moveTask(currentDay, taskId, offset) {
+        const weekDates = Utils.getWeekDates();
+        const dayNames = weekDates.map(date => Utils.getDayName(date).toLowerCase());
+        const currentDayIndex = dayNames.indexOf(currentDay);
+        
+        if (currentDayIndex === -1 || currentDayIndex + offset >= dayNames.length) {
+            return false;
+        }
+        
+        const targetDay = dayNames[currentDayIndex + offset];
+        const tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+        
+        if (!tasks[currentDay]) return false;
+        
+        const taskIndex = tasks[currentDay].findIndex(task => task.id === taskId);
+        if (taskIndex === -1) return false;
+        
+        const task = tasks[currentDay][taskIndex];
+        task.completed = false; // Reset completion when moving
+        
+        // Remove from current day
+        tasks[currentDay].splice(taskIndex, 1);
+        
+        // Add to target day
+        if (!tasks[targetDay]) tasks[targetDay] = [];
+        tasks[targetDay].push(task);
+        
+        saveTasks(tasks);
+        return true;
+    }
+
+    return {
+        initializeTasks,
+        getDayTasks,
+        getWeekTasks,
+        addTask,
+        toggleTask,
+        deleteTask,
+        moveTask
+    };
+})();
+
+//js\sw.js
+// Add to the install event
+self.addEventListener('install', event => {
+    event.waitUntil(
+      caches.open(CACHE_NAME)
+        .then(cache => {
+          console.log('Opened cache');
+          return cache.addAll(ASSETS);
+        })
+    );
+  });
+  
+  // Add this new event for updates
+  self.addEventListener('activate', event => {
+    const cacheWhitelist = [CACHE_NAME];
+    event.waitUntil(
+      caches.keys().then(cacheNames => {
+        return Promise.all(
+          cacheNames.map(cacheName => {
+            if (cacheWhitelist.indexOf(cacheName) === -1) {
+              return caches.delete(cacheName);
+            }
+          })
+        );
+      })
+    );
+  });
+
+//js\utils.js
+// utils.js - No export needed since we'll use IIFE pattern
+
+const Utils = (function() {
+    // Format date as "Monday, June 10"
+    function formatDate(date) {
+        const options = { weekday: 'long', month: 'long', day: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+    }
+
+    // Get day name from date (Monday, Tuesday, etc.)
+    function getDayName(date) {
+        return date.toLocaleDateString('en-US', { weekday: 'long' });
+    }
+
+    // Add to Utils object in utils.js
+    function getNextDay(currentDay) {
+        const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+        const currentIndex = days.indexOf(currentDay.toLowerCase());
+        if (currentIndex === -1 || currentIndex === days.length - 1) return null;
+        return days[currentIndex + 1];
+    }
+  
+  function getPrevDay(currentDay) {
+    const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+    const currentIndex = days.indexOf(currentDay.toLowerCase());
+    if (currentIndex <= 0) return null;
+    return days[currentIndex - 1];
+  }
+  
+   function getDateForDay(dayName) {
+    const weekDates = this.getWeekDates();
+    const dayIndex = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'].indexOf(dayName.toLowerCase());
+    return weekDates[dayIndex];
+  }
+    // Get short day name (Mon, Tue, etc.)
+    function getShortDayName(date) {
+        return date.toLocaleDateString('en-US', { weekday: 'short' });
+    }
+
+    // Get dates for the current week (Monday to Friday)
+    function getWeekDates() {
+        const today = new Date();
+        const currentDay = today.getDay();
+        const monday = new Date(today);
+        
+        // Adjust to Monday (if today is Sunday, go back 6 days)
+        monday.setDate(today.getDate() - (currentDay === 0 ? 6 : currentDay - 1));
+        
+        const weekDates = [];
+        for (let i = 0; i < 5; i++) {
+            const date = new Date(monday);
+            date.setDate(monday.getDate() + i);
+            weekDates.push(date);
+        }
+        
+        return weekDates;
+    }
+
+    // Generate a unique ID for tasks
+    function generateId() {
+        return Date.now().toString(36) + Math.random().toString(36).substr(2, 9);
+    }
+
+    // Debounce function to limit how often a function can fire
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+    
+    return {
+        formatDate,
+        getDayName,
+        getShortDayName,
+        getWeekDates,
+        generateId,
+        debounce,
+        getPrevDay,
+        getNextDay,
+        getDateForDay
+    };
+})();
+
+
