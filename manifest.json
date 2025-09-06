@@ -1,7 +1,7 @@
 {
     "name": "Luminous Workweek",
     "short_name": "Workweek",
-    "start_url": "/",
+    "start_url": "/ToDoApp/index.html",
     "display": "standalone",
     "background_color": "#f5f7ff",
     "theme_color": "#5e60ce",
